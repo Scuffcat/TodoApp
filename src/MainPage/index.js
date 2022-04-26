@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 import TodoDate from "../TodoDate";
+import TodoLeft from "../TodoLeft";
+import TodoAdd from "../TodoAdd";
 
 
 const Background=styled.div`
@@ -24,6 +26,8 @@ function MainPage() {
         <Background>
         <Box>
             <TodoDate></TodoDate>
+            <TodoLeft></TodoLeft>
+            <TodoAdd></TodoAdd>
         </Box>
         </Background>
     )
