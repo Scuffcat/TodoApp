@@ -4,6 +4,7 @@ import styled from "styled-components";
 import TodoDate from "../TodoDate";
 import TodoLeft from "../TodoLeft";
 import TodoAdd from "../TodoAdd";
+import TodoItem from "../TodoItem";
 
 
 const Background=styled.div`
@@ -28,6 +29,7 @@ function MainPage() {
             <TodoDate></TodoDate>
             <TodoLeft></TodoLeft>
             <TodoAdd></TodoAdd>
+            <TodoItem></TodoItem>
         </Box>
         </Background>
     )

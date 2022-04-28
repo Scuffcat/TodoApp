@@ -1,16 +1,26 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-const Date=styled.div`
+const Container = styled.div`
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 15px;
+`
+const Date2=styled.div`
     font-size: 25px;
+    padding-bottom: 15px;
 `
 
 function TodoDate() {
+    const today=new Date();
+
+
     return(
-    <>
-        <Date>2022/04/26</Date>
-        <Date>Tuesday</Date>
-        </>
+    <Container>
+        <div>{today.getFullYear()}</div>/
+        <div>{today.getMonth()+1}</div>/
+        <div>{today.getDate()}</div>
+    </Container>
     );
 }
 

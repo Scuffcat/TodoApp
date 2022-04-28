@@ -5,10 +5,10 @@ const Input=styled.input`
 `
 
 const Button=styled.button`
-width: 50px;
-height: 25px;
-background-color: teal;
-color: white;
+    width: 50px;
+    height: 25px;
+    background-color: teal;
+    color: white;
 `
 
 function TodoAdd() {
