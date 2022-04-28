@@ -6,10 +6,6 @@ const Container = styled.div`
     flex-direction: row;
     padding-bottom: 15px;
 `
-const Date2=styled.div`
-    font-size: 25px;
-    padding-bottom: 15px;
-`
 
 function TodoDate() {
     const today=new Date();
