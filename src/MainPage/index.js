@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled from "styled-components"; 
 
 import TodoDate from "../TodoDate";
 import TodoLeft from "../TodoLeft";
@@ -19,21 +19,38 @@ const Box=styled.div`
     background-color: white;
     height: 500px;
     width: 400px;
+    padding: 15px;
 `
 
 
 function MainPage() {
+    const [todos,setTodos]=useState([
+        { isDone: false, text: "hello", id: 1}
+    ])
+
+    const addTodo=(todo)=> {
+        setTodos([...todos,todo])
+    };
+    console.log(todos);
+
+
+    // const [age, setAge]=useState(6)
+    // age={age}
+    
+    const [studentname, setStudentname]=useState({firstname: "default", lastname: "default"});
+
+    
     return (
         <Background>
         <Box>
             <TodoDate></TodoDate>
-            <TodoLeft></TodoLeft>
-            <TodoAdd></TodoAdd>
-            <TodoItem></TodoItem>
+            <TodoLeft todos={todos}></TodoLeft>
+            <br></br>
+            <TodoAdd todos={todos} updateTodo={addTodo}></TodoAdd>
+            <TodoItem todos={todos}></TodoItem>
         </Box>
         </Background>
     )
 }
-
 
 export default MainPage;

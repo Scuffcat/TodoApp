@@ -11,11 +11,34 @@ const Button=styled.button`
     color: white;
 `
 
-function TodoAdd() {
+function TodoAdd({todos, updateTodo}) {
+    const [todo, setTodo]=useState({
+        id: null,
+        text: "",
+        isDone: false,
+    });
+
+    const addTodo=(e)=>{
+        const {name,value}=e.target
+        setTodo ({
+            id: todos.length+1,
+            text: value,
+            isDone: false,
+        })
+      
+
+        console.log(todo)
+    }
+
+    const onClickChange=()=>{
+        updateTodo(todo)
+        
+    }
+
     return (
     <>
-        <Input></Input>
-        <Button>Add</Button>
+        <Input type="text" name="text" onChange={addTodo}></Input> 
+        <Button onClick={onClickChange}>Add</Button>
     </>
     );
 }

@@ -15,7 +15,7 @@ const Button=styled.button`
     background-color: blue;
     height: 30px;
     width: 30px;
-    border-radius: 30px;
+    border-radius: 20px;
 `
 
 const Trash=styled.img`
@@ -23,12 +23,21 @@ const Trash=styled.img`
     width: 20px;
 `
 
+function Midterm () {
+    const [Todos, setTodos]=emptyTodo
+    console.log(todos)
+}
+
+const deleteTodo=(todo)=> {
+    setTodos([])
+}
+
 function TodoItem() {
     return(
 <Container>
     <Button></Button>
-    <Todo>hi</Todo>
-    <Trash src={TrashImg}></Trash>
+    <Todo>hello</Todo>
+    <Trash src={TrashImg} onClick={Midterm}></Trash>
 </Container>
     );
 }
