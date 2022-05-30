@@ -26,7 +26,7 @@ const Box=styled.div`
 function MainPage() {
     const [todos,setTodos]=useState([
         { isDone: false, text: "hello", id: 1}
-    ])
+    ])  
 
     const addTodo=(todo)=> {
         setTodos([...todos,todo])
@@ -39,7 +39,9 @@ function MainPage() {
     
     const [studentname, setStudentname]=useState({firstname: "default", lastname: "default"});
 
-    
+    const deleteItem = () => {
+        setTodos([])
+    }
     return (
         <Background>
         <Box>
@@ -47,7 +49,7 @@ function MainPage() {
             <TodoLeft todos={todos}></TodoLeft>
             <br></br>
             <TodoAdd todos={todos} updateTodo={addTodo}></TodoAdd>
-            <TodoItem todos={todos}></TodoItem>
+            <TodoItem todos={todos} deleteTodo={deleteItem}></TodoItem>
         </Box>
         </Background>
     )

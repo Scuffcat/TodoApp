@@ -23,21 +23,18 @@ const Trash=styled.img`
     width: 20px;
 `
 
-function Midterm () {
-    const [Todos, setTodos]=emptyTodo
-    console.log(todos)
+function TodoItem ({todos,deleteTodo}) {
+   
+
+const updateTodo=()=> {
+    deleteTodo()
 }
 
-const deleteTodo=(todo)=> {
-    setTodos([])
-}
-
-function TodoItem() {
-    return(
+return(
 <Container>
     <Button></Button>
-    <Todo>hello</Todo>
-    <Trash src={TrashImg} onClick={Midterm}></Trash>
+    <Todo>{todos[0].text}</Todo>
+    <Trash src={TrashImg} onClick={updateTodo}></Trash>
 </Container>
     );
 }
