@@ -23,7 +23,7 @@ function TodoAdd({todos, updateTodo}) {
         setTodo ({
             id: todos.length+1,
             text: value,
-            isDone: false,
+            isDone: true,
         })
       
 

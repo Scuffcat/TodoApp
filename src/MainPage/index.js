@@ -4,8 +4,7 @@ import styled from "styled-components";
 import TodoDate from "../TodoDate";
 import TodoLeft from "../TodoLeft";
 import TodoAdd from "../TodoAdd";
-import TodoItem from "../TodoItem";
-
+import TodoList from "../TodoList";
 
 const Background=styled.div`
     background-color: #28bec6;
@@ -24,24 +23,29 @@ const Box=styled.div`
 
 
 function MainPage() {
-    const [todos,setTodos]=useState([
-        { isDone: false, text: "hello", id: 1}
-    ])  
+    const [todos,setTodos]=useState([])  
 
     const addTodo=(todo)=> {
         setTodos([...todos,todo])
     };
     console.log(todos);
 
-
-    // const [age, setAge]=useState(6)
-    // age={age}
-    
-    const [studentname, setStudentname]=useState({firstname: "default", lastname: "default"});
-
-    const deleteItem = () => {
-        setTodos([])
+    const deleteItem = (id) => {
+        console.log(id)
+        const newTodos=todos.filter((todo)=>todo.id != id)
+        setTodos(newTodos)
     }
+
+    const changeIsDone2=(id) => {
+        const currentTodo=todos[id-1];
+        if ({isDone: true}) {
+            setTodos({isDone: false})
+        } else {
+            setTodos({isDone: false})
+        }
+        setTodos([...todos])
+    };
+
     return (
         <Background>
         <Box>
@@ -49,7 +53,7 @@ function MainPage() {
             <TodoLeft todos={todos}></TodoLeft>
             <br></br>
             <TodoAdd todos={todos} updateTodo={addTodo}></TodoAdd>
-            <TodoItem todos={todos} deleteTodo={deleteItem}></TodoItem>
+            <TodoList todos={todos} deleteTodo={deleteItem} changeIsDone={changeIsDone2}></TodoList>
         </Box>
         </Background>
     )
